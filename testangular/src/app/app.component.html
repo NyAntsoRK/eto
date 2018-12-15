@@ -1,0 +1,24 @@
+<!---->
+<input 
+  [(ngModel)]="todo" 
+  placeholder="todo..." 
+  name="todo" />
+<button (click)="add()">
+  Add todo
+</button>
+<ul>
+  <li *ngFor="let item of todos">
+    <label>
+      <input 
+        type="checkbox" 
+        [(ngModel)]="item.checked" />
+      {{item.id}}
+      <s *ngIf="item.checked">
+        {{item.name}}
+      </s>
+      <span *ngIf="!item.checked">
+          {{item.name}}
+      </span>
+    </label>
+  </li>
+</ul>
